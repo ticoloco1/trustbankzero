@@ -11,16 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@lovable.dev/cloud-auth-js": path.resolve(__dirname, "./src/integrations/lovable/stub.ts"),
     },
   },
-  build: {
-    rollupOptions: {
-      external: [],
-      onwarn(warning, warn) {
-        // Suppress unresolved import warnings and treat as errors only for real issues
-        if (warning.code === 'UNRESOLVED_IMPORT' && warning.message?.includes('lovable')) return;
-        warn(warning);
-      }
-    }
-  }
 });
