@@ -1,13 +1,4 @@
-import singerImg from "@/assets/categories/singer.webp";
-import filmmakerImg from "@/assets/categories/filmmaker.webp";
-import digitalArtistImg from "@/assets/categories/digital-artist.webp";
-import influencerImg from "@/assets/categories/influencer.webp";
-import podcasterImg from "@/assets/categories/podcaster.webp";
-import streamerImg from "@/assets/categories/streamer.webp";
-import gamerImg from "@/assets/categories/gamer.webp";
-import designerImg from "@/assets/categories/designer.webp";
-import journalistImg from "@/assets/categories/journalist.webp";
-import musicianImg from "@/assets/categories/musician.webp";
+
 
 export interface PlatformSettings {
   listingFeeInternal: number;
