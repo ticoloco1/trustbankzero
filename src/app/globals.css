@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 220 40% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 13%;
+    --primary: 213 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 40% 13%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 155 70% 43%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 7 75% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 213 100% 55%;
+    --radius: 1.125rem;
+    --bg: hsl(220 20% 98%);
+    --bg2: hsl(220 20% 95%);
+    --text: hsl(220 40% 13%);
+    --text2: hsl(220 10% 50%);
+    --card-c: hsl(0 0% 100%);
+    --brand: hsl(213 100% 55%);
+  }
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 0 0% 95%;
+    --card: 220 30% 11%;
+    --card-foreground: 0 0% 95%;
+    --primary: 213 100% 60%;
+    --primary-foreground: 220 30% 8%;
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 155 70% 48%;
+    --accent-foreground: 220 30% 8%;
+    --destructive: 7 62% 45%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 213 100% 60%;
+    --bg: hsl(220 30% 8%);
+    --bg2: hsl(220 30% 11%);
+    --text: hsl(0 0% 95%);
+    --text2: hsl(220 10% 60%);
+    --card-c: hsl(220 30% 11%);
+    --brand: hsl(213 100% 60%);
+  }
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 { font-weight: 800; }
+}
+
+@layer components {
+  .card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius, 18px);
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    font-weight: 800;
+    font-size: 0.875rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition: all 0.15s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--border));
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background: hsl(var(--muted)); }
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.75rem;
+    font-weight: 800;
+    font-size: 0.875rem;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    transition: all 0.15s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-accent:hover { opacity: 0.88; transform: translateY(-1px); }
+  .input {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    background: hsl(var(--secondary));
+    border: 1.5px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    font-family: inherit;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.15s;
+  }
+  .input:focus {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.12);
+  }
+  .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--muted-foreground));
+  }
+  .text-brand { color: hsl(var(--primary)); }
+  .bg-brand { background: hsl(var(--primary)); }
+  .text-accent-c { color: hsl(var(--accent)); }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+/* Ghost placeholders */
+.input::placeholder {
+  color: hsl(var(--muted-foreground) / 0.4);
+  font-style: italic;
+}
+textarea.input::placeholder {
+  color: hsl(var(--muted-foreground) / 0.4);
+  font-style: italic;
+}
