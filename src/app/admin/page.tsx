@@ -277,8 +277,7 @@ const Admin = () => {
   }
 
   if (!user || !isAdmin) {
-    return <>{typeof window !== "undefined" && (window.location.href="/" replace />;
-  }
+return null;  }
 
   const handleDeleteVideo = async (id: string) => {
     if (!confirm("Permanently delete this video?")) return;
