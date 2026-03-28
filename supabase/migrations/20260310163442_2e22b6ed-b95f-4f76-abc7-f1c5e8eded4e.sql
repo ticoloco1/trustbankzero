@@ -1,0 +1,1 @@
+ALTER TABLE public.mini_sites ADD COLUMN IF NOT EXISTS boost_rank integer NOT NULL DEFAULT 999;

@@ -1,0 +1,10 @@
+project_id = "gdamxxujnbwpvejebcjs"
+
+[functions.get-protected-video]
+verify_jwt = false
+
+[functions.aws-piracy-scan]
+verify_jwt = false
+
+[functions.arweave-proof]
+verify_jwt = false
